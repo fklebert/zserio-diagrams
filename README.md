@@ -1,6 +1,6 @@
 # zserio-diagrams
 
-[![CI](https://github.com/fklebert/zserio-diagrams/actions/workflows/ci.yml/badge.svg)](https://github.com/fklebert/zserio-diagrams/actions/workflows/ci.yml)
+[![CI](https://github.com/Klebert-Engineering/zserio-diagrams/actions/workflows/ci.yml/badge.svg)](https://github.com/Klebert-Engineering/zserio-diagrams/actions/workflows/ci.yml)
 
 A [zserio](https://github.com/ndsev/zserio) extension that generates **PlantUML** and **Mermaid** class diagrams and **XMI** files (importable into Sparx Enterprise Architect) directly from zserio schemas.
 
