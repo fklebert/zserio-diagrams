@@ -1,0 +1,218 @@
+<!--
+
+Ant build.xml for Zserio Diagram Extension.
+
+Zserio Diagram Extension generates PlantUML and Mermaid class diagrams from zserio schemas.
+
+The following external properties can be set:
+
+zserio_diagram.build_dir   - Directory where to put generated files. Default is "build".
+zserio_diagram.install_dir - Directory where to install Zserio Diagram Extension jar file. Default is "distr".
+zserio.distr_dir           - Zserio distr directory to use. If not set, zserio binaries will be automatically
+                             downloaded from GitHub.
+spotbugs.home_dir          - Location of the spotbugs tool. If not set, spotbugs is not run.
+
+-->
+<project name="zserio_diagram" basedir="." default="jar">
+    <dirname property="zserio_diagram.base_dir" file="${ant.file.zserio_diagram}"/>
+
+    <property name="zserio_diagram.build_dir" value="${zserio_diagram.base_dir}/build"/>
+    <property name="zserio_diagram.install_dir" value="${zserio_diagram.base_dir}/distr"/>
+
+    <property name="zserio_diagram.download_dir" value="${zserio_diagram.build_dir}/download"/>
+    <property name="zserio_diagram.3rdparty_dir" value="${zserio_diagram.download_dir}/zserio_libs"/>
+
+    <property name="zserio_core.jar_file" value="${zserio_diagram.3rdparty_dir}/zserio_core.jar"/>
+    <property name="zserio_core.commons_cli_jar_name" value="commons-cli-1.4.jar"/>
+    <property name="zserio_core.commons_cli_jar"
+        value="${zserio_diagram.3rdparty_dir}/${zserio_core.commons_cli_jar_name}"/>
+    <property name="zserio_core.freemarker_jar_name" value="freemarker-2.3.28.jar"/>
+    <property name="zserio_core.freemarker_jar"
+        value="${zserio_diagram.3rdparty_dir}/${zserio_core.freemarker_jar_name}"/>
+    <property name="zserio_core.antlr_jar_name" value="antlr-4.7.2-complete.jar"/>
+    <property name="zserio_core.antlr_jar"
+        value="${zserio_diagram.3rdparty_dir}/${zserio_core.antlr_jar_name}"/>
+
+    <property name="zserio_diagram.src_dir" value="${zserio_diagram.base_dir}/src"/>
+    <property name="zserio_diagram.classes_dir" value="${zserio_diagram.build_dir}/classes"/>
+    <property name="zserio_diagram.spotbugs.out_dir" value="${zserio_diagram.build_dir}/spotbugs"/>
+
+    <property name="zserio_diagram.jar_dir" value="${zserio_diagram.build_dir}/jar"/>
+    <property name="zserio_diagram.jar_file" value="${zserio_diagram.jar_dir}/zserio_diagram.jar"/>
+
+    <property name="zserio_bundle.build_dir" value="${zserio_diagram.build_dir}/bundle"/>
+    <property name="zserio_bundle.install_dir" value="${zserio_diagram.install_dir}"/>
+    <property name="zserio_bundle.jar_dir" value="${zserio_bundle.build_dir}/jar"/>
+    <property name="zserio_bundle.jar_file_name" value="zserio.jar"/>
+    <property name="zserio_bundle.jar_file" value="${zserio_bundle.jar_dir}/${zserio_bundle.jar_file_name}"/>
+
+    <!-- Zserio Diagram extension version. -->
+    <loadfile
+        encoding="UTF-8"
+        property="zserio_diagram.version"
+        srcFile="${zserio_diagram.src_dir}/zserio/extension/diagram/DiagramExtension.java">
+        <filterchain>
+            <striplinebreaks/>
+            <tokenfilter>
+                <replaceregex
+                    pattern='.*EXTENSION_VERSION_STRING\s*=\s*"([0-9]+.[0-9]+.[0-9]+(-[A-Za-z0-9]+)?)".*'
+                    replace="\1"/>
+            </tokenfilter>
+        </filterchain>
+    </loadfile>
+
+    <!-- Zserio core version. -->
+    <loadfile
+        encoding="UTF-8"
+        property="zserio_core.version"
+        srcFile="${zserio_diagram.src_dir}/zserio/extension/diagram/DiagramExtension.java">
+        <filterchain>
+            <striplinebreaks/>
+            <tokenfilter>
+                <replaceregex
+                    pattern='.*ZSERIO_VERSION_STRING\s*=\s*"([0-9]+.[0-9]+.[0-9]+(-[A-Za-z0-9]+)?)".*'
+                    replace="\1"/>
+            </tokenfilter>
+        </filterchain>
+    </loadfile>
+
+    <target name="clean">
+        <delete dir="${zserio_diagram.build_dir}"/>
+    </target>
+
+    <target name="zserio_copy" if="zserio.distr_dir">
+        <mkdir dir="${zserio_diagram.download_dir}"/>
+        <copy todir="${zserio_diagram.download_dir}">
+            <fileset dir="${zserio.distr_dir}"/>
+        </copy>
+    </target>
+
+    <target name="zserio_download" unless="zserio.distr_dir">
+        <mkdir dir="${zserio_diagram.download_dir}"/>
+        <property name="github_https_download" value="https://github.com/ndsev/zserio/releases/download"/>
+        <property name="zserio_bin_zip_name" value="zserio-${zserio_core.version}-bin.zip"/>
+        <get src="${github_https_download}/v${zserio_core.version}/${zserio_bin_zip_name}"
+            dest="${zserio_diagram.download_dir}" usetimestamp="true"/>
+        <unzip src="${zserio_diagram.download_dir}/${zserio_bin_zip_name}" dest="${zserio_diagram.download_dir}"/>
+    </target>
+
+    <target name="compile" depends="zserio_download, zserio_copy">
+        <mkdir dir="${zserio_diagram.classes_dir}"/>
+        <depend srcDir="${zserio_diagram.src_dir}" destDir="${zserio_diagram.classes_dir}"
+            cache="${zserio_diagram.build_dir}/depend-cache"/>
+
+        <path id="zserio_diagram.classpath_zserio_core">
+            <pathelement location="${zserio_core.jar_file}"/>
+        </path>
+
+        <javac srcdir="${zserio_diagram.src_dir}" destdir="${zserio_diagram.classes_dir}" debug="on"
+            encoding="utf8" includeAntRuntime="false">
+            <compilerarg value="-Xlint:all"/>
+            <compilerarg value="-Werror"/>
+            <classpath>
+                <path refid="zserio_diagram.classpath_zserio_core"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${zserio_diagram.jar_dir}"/>
+        <copy todir="${zserio_diagram.build_dir}/metainf" overwrite="true">
+            <fileset dir="${zserio_diagram.base_dir}/metainf"/>
+        </copy>
+        <jar destfile="${zserio_diagram.jar_file}">
+            <fileset dir="${zserio_diagram.classes_dir}">
+                <include name="zserio/**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Implementation-Version" value="${zserio_diagram.version}"/>
+            </manifest>
+            <metainf dir="${zserio_diagram.build_dir}/metainf" includes="**/*"/>
+        </jar>
+    </target>
+
+    <target name="install" depends="jar">
+        <mkdir dir="${zserio_diagram.install_dir}"/>
+        <copy file="${zserio_diagram.jar_file}" todir="${zserio_diagram.install_dir}" overwrite="true"/>
+    </target>
+
+    <target name="spotbugs" depends="install" if="spotbugs.home_dir">
+        <mkdir dir="${zserio_diagram.spotbugs.out_dir}"/>
+        <taskdef classpath="${spotbugs.home_dir}/lib/spotbugs-ant.jar"
+            resource="edu/umd/cs/findbugs/anttask/tasks.properties"/>
+        <spotbugs home="${spotbugs.home_dir}"
+            output="html"
+            outputFile="${zserio_diagram.spotbugs.out_dir}/spotbugs.html"
+            reportLevel="low"
+            errorProperty="zserio_diagram.is_failed"
+            warningsProperty="zserio_diagram.is_failed">
+            <sourcePath>
+                <dirset dir="${zserio_diagram.src_dir}"/>
+            </sourcePath>
+            <fileset dir="${zserio_diagram.classes_dir}"/>
+            <auxClasspath>
+                <path refid="zserio_diagram.classpath_zserio_core"/>
+            </auxClasspath>
+        </spotbugs>
+        <fail message="SpotBugs found some issues!" if="zserio_diagram.is_failed"/>
+    </target>
+
+    <target name="test" depends="spotbugs">
+    </target>
+
+    <!-- Bundled Zserio -->
+    <target name="zserio_bundle.clean" depends="clean">
+        <delete dir="${zserio_bundle.build_dir}"/>
+    </target>
+
+    <target name="zserio_bundle.jar" depends="install">
+        <mkdir dir="${zserio_bundle.build_dir}"/>
+        <mkdir dir="${zserio_bundle.jar_dir}"/>
+        <unzip src="${zserio_diagram.download_dir}/${zserio_bundle.jar_file_name}"
+            dest="${zserio_diagram.download_dir}">
+            <patternset>
+                <include name="**/zserio.tools.Extension"/>
+            </patternset>
+        </unzip>
+        <concat destfile="${zserio_bundle.build_dir}/metainf/services/zserio.tools.Extension">
+            <fileset dir="${zserio_diagram.download_dir}" includes="**/zserio.tools.Extension"
+                erroronmissingdir="false"/>
+            <fileset dir="${zserio_diagram.build_dir}" includes="**/metainf/**/*" erroronmissingdir="false"/>
+        </concat>
+        <jar destfile="${zserio_bundle.jar_file}" duplicate="preserve">
+            <restrict>
+                <not>
+                    <name name="META-INF/*"/>
+                </not>
+                <archives>
+                    <zips>
+                        <fileset dir="${zserio_diagram.3rdparty_dir}" includes="*.jar"
+                            excludes="${zserio_core.commons_cli_jar_name}
+                                ${zserio_core.freemarker_jar_name} ${zserio_core.antlr_jar_name}"/>
+                        <fileset dir="${zserio_diagram.jar_dir}" includes="*.jar"/>
+                    </zips>
+                </archives>
+            </restrict>
+            <zipfileset src="${zserio_core.commons_cli_jar}" excludes="META-INF/*"/>
+            <zipfileset src="${zserio_core.commons_cli_jar}" includes="META-INF/LICENSE.txt"
+                fullpath="META-INF/LICENSE_COMMONS_CLI.txt"/>
+            <zipfileset src="${zserio_core.freemarker_jar}" excludes="META-INF/*"/>
+            <zipfileset src="${zserio_core.freemarker_jar}" includes="META-INF/LICENSE"
+                fullpath="META-INF/LICENSE_FREEMARKER.txt"/>
+            <zipfileset src="${zserio_core.antlr_jar}" excludes="META-INF/*"/>
+            <manifest>
+                <attribute name="Main-Class" value="zserio.tools.ZserioTool"/>
+                <attribute name="Implementation-Version" value="${zserio_core.version}"/>
+            </manifest>
+            <metainf dir="${zserio_bundle.build_dir}/metainf" includes="**/*" erroronmissingdir="false"/>
+        </jar>
+    </target>
+
+    <target name="zserio_bundle.install" depends="zserio_bundle.jar">
+        <mkdir dir="${zserio_bundle.install_dir}"/>
+        <copy file="${zserio_bundle.jar_file}" todir="${zserio_bundle.install_dir}" overwrite="true"/>
+    </target>
+
+    <target name="zserio_bundle.test" depends="zserio_bundle.install">
+    </target>
+</project>
