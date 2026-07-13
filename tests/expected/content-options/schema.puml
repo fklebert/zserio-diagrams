@@ -76,7 +76,7 @@ package "railway.common" {
   }
 
   class MAX_PLATFORMS <<const>> {
-    {static} uint8 = zserio.ast.Expression@c540f5a
+    {static} uint8 = 64
   }
 
   enum TrackGauge <<enum>> {

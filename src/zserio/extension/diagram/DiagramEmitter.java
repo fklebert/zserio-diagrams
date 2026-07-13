@@ -271,10 +271,27 @@ public class DiagramEmitter extends DefaultTreeWalker
         Expression valueExpr = constant.getValueExpression();
         if (valueExpr != null)
         {
-            typeInfo.setConstantValue(valueExpr.toString());
+            typeInfo.setConstantValue(getExpressionDisplayValue(valueExpr));
         }
 
         model.addType(typeInfo);
+    }
+
+    private String getExpressionDisplayValue(Expression expression)
+    {
+        BigInteger integerValue = expression.getIntegerValue();
+        if (integerValue != null)
+        {
+            return integerValue.toString();
+        }
+
+        String stringValue = expression.getStringValue();
+        if (stringValue != null)
+        {
+            return "\"" + stringValue + "\"";
+        }
+
+        return expression.getText();
     }
 
     private TypeInfo createTypeInfo(String name, TypeKind kind)
