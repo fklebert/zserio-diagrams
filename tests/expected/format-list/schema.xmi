@@ -1,0 +1,2246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmi:version="2.1">
+<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5" exporterID="1710"/>
+<uml:Model xmi:type="uml:Model" xmi:id="model_root" name="schema" visibility="public">
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_root" name="schema" visibility="public">
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_PrimitiveTypes" name="PrimitiveTypes">
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_string" name="string"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_uint8" name="uint8"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_uint16" name="uint16"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_bool" name="bool"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_uint32" name="uint32"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_int32" name="int32"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_int16" name="int16"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_bit:5" name="bit:5"></packagedElement>
+<packagedElement xmi:type="uml:PrimitiveType" xmi:id="prim_bit:6" name="bit:6"></packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_railway" name="railway">
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_RailwayDatabase" name="RailwayDatabase" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_RailwayDatabase_network" name="network" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_RailwayDatabase_network" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_RailwayDatabase_network" value="1"></upperValue>
+<type xmi:idref="type_railway_network_RailNetwork"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_RailwayDatabase_fleet" name="fleet" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_RailwayDatabase_fleet" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_RailwayDatabase_fleet" value="-1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Train"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_RailwayDatabase_signals" name="signals" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_RailwayDatabase_signals" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_RailwayDatabase_signals" value="-1"></upperValue>
+<type xmi:idref="type_railway_signalling_Signal"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_RailwayDatabase_timetable" name="timetable" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_RailwayDatabase_timetable" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_RailwayDatabase_timetable" value="1"></upperValue>
+<type xmi:idref="type_railway_timetable_Timetable"></type>
+</ownedAttribute>
+</packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_railway_network" name="railway.network">
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_network_RailNetwork" name="RailNetwork" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_RailNetwork_name" name="name" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_RailNetwork_name" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_RailNetwork_name" value="1"></upperValue>
+<type xmi:idref="prim_string"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_RailNetwork_boundingBox" name="boundingBox" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_RailNetwork_boundingBox" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_RailNetwork_boundingBox" value="2"></upperValue>
+<type xmi:idref="type_railway_common_GeoPosition"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_RailNetwork_stations" name="stations" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_RailNetwork_stations" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_RailNetwork_stations" value="-1"></upperValue>
+<type xmi:idref="type_railway_network_Station"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_RailNetwork_segments" name="segments" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_RailNetwork_segments" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_RailNetwork_segments" value="-1"></upperValue>
+<type xmi:idref="type_railway_network_TrackSegment"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_network_Station" name="Station" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Station_id" name="id" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Station_id" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Station_id" value="1"></upperValue>
+<type xmi:idref="type_railway_common_StationId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Station_name" name="name" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Station_name" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Station_name" value="1"></upperValue>
+<type xmi:idref="prim_string"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Station_position" name="position" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Station_position" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Station_position" value="1"></upperValue>
+<type xmi:idref="type_railway_common_GeoPosition"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Station_platforms" name="platforms" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Station_platforms" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Station_platforms" value="-1"></upperValue>
+<type xmi:idref="type_railway_network_Platform"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_network_Platform" name="Platform" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Platform_number" name="number" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Platform_number" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Platform_number" value="1"></upperValue>
+<type xmi:idref="prim_uint8"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Platform_lengthMeters" name="lengthMeters" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Platform_lengthMeters" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Platform_lengthMeters" value="1"></upperValue>
+<type xmi:idref="prim_uint16"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_Platform_hasShelter" name="hasShelter" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_Platform_hasShelter" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_Platform_hasShelter" value="1"></upperValue>
+<type xmi:idref="prim_bool"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_network_TrackSegment" name="TrackSegment" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_id" name="id" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_id" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_id" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TrackId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_fromStation" name="fromStation" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_fromStation" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_fromStation" value="1"></upperValue>
+<type xmi:idref="type_railway_common_StationId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_toStation" name="toStation" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_toStation" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_toStation" value="1"></upperValue>
+<type xmi:idref="type_railway_common_StationId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_gauge" name="gauge" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_gauge" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_gauge" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TrackGauge"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_electrification" name="electrification" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_electrification" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_electrification" value="1"></upperValue>
+<type xmi:idref="type_railway_network_Electrification"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_lengthMeters" name="lengthMeters" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_lengthMeters" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_lengthMeters" value="1"></upperValue>
+<type xmi:idref="prim_uint32"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_TrackSegment_speedRestriction" name="speedRestriction" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_TrackSegment_speedRestriction" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_TrackSegment_speedRestriction" value="1"></upperValue>
+<type xmi:idref="type_railway_network_SpeedRestriction"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_network_Electrification" name="Electrification" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_network_Electrification_NONE" name="NONE"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_network_Electrification_DC_1500V" name="DC_1500V"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_network_Electrification_DC_3000V" name="DC_3000V"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_network_Electrification_AC_15KV_16_7HZ" name="AC_15KV_16_7HZ"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_network_Electrification_AC_25KV_50HZ" name="AC_25KV_50HZ"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_network_SpeedRestriction" name="SpeedRestriction" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_SpeedRestriction_maxSpeedKmh" name="maxSpeedKmh" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_SpeedRestriction_maxSpeedKmh" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_SpeedRestriction_maxSpeedKmh" value="1"></upperValue>
+<type xmi:idref="prim_uint16"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_network_SpeedRestriction_reason" name="reason" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_network_SpeedRestriction_reason" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_network_SpeedRestriction_reason" value="1"></upperValue>
+<type xmi:idref="prim_string"></type>
+</ownedAttribute>
+</packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_railway_common" name="railway.common">
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_common_TrackGauge" name="TrackGauge" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_common_TrackGauge_STANDARD" name="STANDARD"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_common_TrackGauge_NARROW" name="NARROW"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_common_TrackGauge_BROAD" name="BROAD"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_common_GeoPosition" name="GeoPosition" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_common_GeoPosition_latitudeE7" name="latitudeE7" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_common_GeoPosition_latitudeE7" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_common_GeoPosition_latitudeE7" value="1"></upperValue>
+<type xmi:idref="prim_int32"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_common_GeoPosition_longitudeE7" name="longitudeE7" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_common_GeoPosition_longitudeE7" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_common_GeoPosition_longitudeE7" value="1"></upperValue>
+<type xmi:idref="prim_int32"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_common_GeoPosition_altitudeMeters" name="altitudeMeters" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_common_GeoPosition_altitudeMeters" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_common_GeoPosition_altitudeMeters" value="1"></upperValue>
+<type xmi:idref="prim_int16"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_common_TimeOfDay" name="TimeOfDay" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_common_TimeOfDay_hour" name="hour" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_common_TimeOfDay_hour" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_common_TimeOfDay_hour" value="1"></upperValue>
+<type xmi:idref="prim_bit:5"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_common_TimeOfDay_minute" name="minute" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_common_TimeOfDay_minute" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_common_TimeOfDay_minute" value="1"></upperValue>
+<type xmi:idref="prim_bit:6"></type>
+</ownedAttribute>
+</packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_railway_rollingstock" name="railway.rollingstock">
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_rollingstock_Amenities" name="Amenities" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_Amenities_WIFI" name="WIFI"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_Amenities_POWER_SOCKETS" name="POWER_SOCKETS"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_Amenities_AIR_CONDITIONING" name="AIR_CONDITIONING"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_Amenities_BISTRO" name="BISTRO"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_Amenities_WHEELCHAIR_ACCESS" name="WHEELCHAIR_ACCESS"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_rollingstock_TractionType" name="TractionType" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_TractionType_DIESEL" name="DIESEL"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_TractionType_ELECTRIC" name="ELECTRIC"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_TractionType_HYBRID" name="HYBRID"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_rollingstock_TractionType_STEAM" name="STEAM"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_Locomotive" name="Locomotive" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Locomotive_designation" name="designation" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Locomotive_designation" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Locomotive_designation" value="1"></upperValue>
+<type xmi:idref="prim_string"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Locomotive_traction" name="traction" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Locomotive_traction" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Locomotive_traction" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_TractionType"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Locomotive_powerKw" name="powerKw" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Locomotive_powerKw" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Locomotive_powerKw" value="1"></upperValue>
+<type xmi:idref="prim_uint16"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_PassengerCar" name="PassengerCar" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_PassengerCar_seatCount" name="seatCount" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_PassengerCar_seatCount" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_PassengerCar_seatCount" value="1"></upperValue>
+<type xmi:idref="prim_uint16"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_PassengerCar_amenities" name="amenities" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_PassengerCar_amenities" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_PassengerCar_amenities" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Amenities"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_FreightCar" name="FreightCar" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_FreightCar_maxLoadKg" name="maxLoadKg" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_FreightCar_maxLoadKg" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_FreightCar_maxLoadKg" value="1"></upperValue>
+<type xmi:idref="prim_uint32"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_FreightCar_hazardousGoods" name="hazardousGoods" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_FreightCar_hazardousGoods" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_FreightCar_hazardousGoods" value="1"></upperValue>
+<type xmi:idref="prim_bool"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_CarBody" name="CarBody" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_CarBody_passenger" name="passenger" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_CarBody_passenger" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_CarBody_passenger" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_PassengerCar"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_CarBody_freight" name="freight" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_CarBody_freight" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_CarBody_freight" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_FreightCar"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_Car" name="Car" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Car_tareWeightKg" name="tareWeightKg" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Car_tareWeightKg" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Car_tareWeightKg" value="1"></upperValue>
+<type xmi:idref="prim_uint32"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Car_body" name="body" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Car_body" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Car_body" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_CarBody"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_TrainComposition" name="TrainComposition" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_TrainComposition_cars" name="cars" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_TrainComposition_cars" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_TrainComposition_cars" value="-1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Car"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_rollingstock_Train" name="Train" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Train_id" name="id" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Train_id" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Train_id" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TrainId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Train_name" name="name" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Train_name" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Train_name" value="1"></upperValue>
+<type xmi:idref="prim_string"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Train_locomotive" name="locomotive" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Train_locomotive" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Train_locomotive" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Locomotive"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Train_carCount" name="carCount" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Train_carCount" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Train_carCount" value="1"></upperValue>
+<type xmi:idref="prim_uint8"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_rollingstock_Train_composition" name="composition" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_rollingstock_Train_composition" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_rollingstock_Train_composition" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_TrainComposition"></type>
+</ownedAttribute>
+</packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_railway_signalling" name="railway.signalling">
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_signalling_SignalType" name="SignalType" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_SignalType_MAIN" name="MAIN"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_SignalType_DISTANT" name="DISTANT"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_SignalType_SHUNTING" name="SHUNTING"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_signalling_MainAspect" name="MainAspect" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_MainAspect_STOP" name="STOP"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_MainAspect_CLEAR" name="CLEAR"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_MainAspect_CAUTION" name="CAUTION"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_signalling_DistantAspect" name="DistantAspect" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_DistantAspect_EXPECT_STOP" name="EXPECT_STOP"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_DistantAspect_EXPECT_CLEAR" name="EXPECT_CLEAR"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_signalling_ShuntingAspect" name="ShuntingAspect" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_ShuntingAspect_HALT" name="HALT"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_signalling_ShuntingAspect_PROCEED" name="PROCEED"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_signalling_SignalState" name="SignalState" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_SignalState_mainAspect" name="mainAspect" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_SignalState_mainAspect" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_SignalState_mainAspect" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_MainAspect"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_SignalState_distantAspect" name="distantAspect" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_SignalState_distantAspect" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_SignalState_distantAspect" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_DistantAspect"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_SignalState_shuntingAspect" name="shuntingAspect" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_SignalState_shuntingAspect" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_SignalState_shuntingAspect" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_ShuntingAspect"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_signalling_Signal" name="Signal" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_Signal_track" name="track" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_Signal_track" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_Signal_track" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TrackId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_Signal_positionMeters" name="positionMeters" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_Signal_positionMeters" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_Signal_positionMeters" value="1"></upperValue>
+<type xmi:idref="prim_uint32"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_Signal_type" name="type" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_Signal_type" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_Signal_type" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_SignalType"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_signalling_Signal_state" name="state" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_signalling_Signal_state" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_signalling_Signal_state" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_SignalState"></type>
+</ownedAttribute>
+</packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Package" xmi:id="pkg_railway_timetable" name="railway.timetable">
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_timetable_OperatingDays" name="OperatingDays" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_MONDAY" name="MONDAY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_TUESDAY" name="TUESDAY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_WEDNESDAY" name="WEDNESDAY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_THURSDAY" name="THURSDAY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_FRIDAY" name="FRIDAY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_SATURDAY" name="SATURDAY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_OperatingDays_SUNDAY" name="SUNDAY"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Enumeration" xmi:id="type_railway_timetable_ServiceCategory" name="ServiceCategory" visibility="public">
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_ServiceCategory_REGIONAL" name="REGIONAL"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_ServiceCategory_INTERCITY" name="INTERCITY"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_ServiceCategory_HIGH_SPEED" name="HIGH_SPEED"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_ServiceCategory_NIGHT" name="NIGHT"></ownedLiteral>
+<ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="lit_railway_timetable_ServiceCategory_FREIGHT" name="FREIGHT"></ownedLiteral>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_timetable_Timetable" name="Timetable" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_Timetable_validityPeriod" name="validityPeriod" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_Timetable_validityPeriod" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_Timetable_validityPeriod" value="1"></upperValue>
+<type xmi:idref="prim_string"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_Timetable_services" name="services" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_Timetable_services" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_Timetable_services" value="-1"></upperValue>
+<type xmi:idref="type_railway_timetable_Service"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_timetable_Service" name="Service" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_Service_trainId" name="trainId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_Service_trainId" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_Service_trainId" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TrainId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_Service_category" name="category" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_Service_category" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_Service_category" value="1"></upperValue>
+<type xmi:idref="type_railway_timetable_ServiceCategory"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_Service_operatingDays" name="operatingDays" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_Service_operatingDays" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_Service_operatingDays" value="1"></upperValue>
+<type xmi:idref="type_railway_timetable_OperatingDays"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_Service_stops" name="stops" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_Service_stops" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_Service_stops" value="-1"></upperValue>
+<type xmi:idref="type_railway_timetable_TimetableStop"></type>
+</ownedAttribute>
+</packagedElement>
+<packagedElement xmi:type="uml:Class" xmi:id="type_railway_timetable_TimetableStop" name="TimetableStop" visibility="public">
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_TimetableStop_station" name="station" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_TimetableStop_station" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_TimetableStop_station" value="1"></upperValue>
+<type xmi:idref="type_railway_common_StationId"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_TimetableStop_arrival" name="arrival" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_TimetableStop_arrival" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_TimetableStop_arrival" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TimeOfDay"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_TimetableStop_departure" name="departure" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_TimetableStop_departure" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_TimetableStop_departure" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TimeOfDay"></type>
+</ownedAttribute>
+<ownedAttribute xmi:type="uml:Property" xmi:id="attr_railway_timetable_TimetableStop_platformNumber" name="platformNumber" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_attr_railway_timetable_TimetableStop_platformNumber" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_attr_railway_timetable_TimetableStop_platformNumber" value="1"></upperValue>
+<type xmi:idref="prim_uint8"></type>
+</ownedAttribute>
+</packagedElement>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_RailwayDatabase_railway_network_RailNetwork_network" name="network">
+<memberEnd xmi:idref="end_src_assoc_railway_RailwayDatabase_railway_network_RailNetwork_network"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_RailwayDatabase_railway_network_RailNetwork_network"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_RailwayDatabase_railway_network_RailNetwork_network" association="assoc_railway_RailwayDatabase_railway_network_RailNetwork_network">
+<type xmi:idref="type_railway_RailwayDatabase"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_RailwayDatabase_railway_network_RailNetwork_network" association="assoc_railway_RailwayDatabase_railway_network_RailNetwork_network" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_RailwayDatabase_railway_network_RailNetwork_network" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_RailwayDatabase_railway_network_RailNetwork_network" value="1"></upperValue>
+<type xmi:idref="type_railway_network_RailNetwork"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet" name="fleet">
+<memberEnd xmi:idref="end_src_assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet" association="assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet">
+<type xmi:idref="type_railway_RailwayDatabase"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet" association="assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet" value="-1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Train"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_RailwayDatabase_railway_signalling_Signal_signals" name="signals">
+<memberEnd xmi:idref="end_src_assoc_railway_RailwayDatabase_railway_signalling_Signal_signals"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_RailwayDatabase_railway_signalling_Signal_signals"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_RailwayDatabase_railway_signalling_Signal_signals" association="assoc_railway_RailwayDatabase_railway_signalling_Signal_signals">
+<type xmi:idref="type_railway_RailwayDatabase"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_RailwayDatabase_railway_signalling_Signal_signals" association="assoc_railway_RailwayDatabase_railway_signalling_Signal_signals" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_RailwayDatabase_railway_signalling_Signal_signals" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_RailwayDatabase_railway_signalling_Signal_signals" value="-1"></upperValue>
+<type xmi:idref="type_railway_signalling_Signal"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable" name="timetable">
+<memberEnd xmi:idref="end_src_assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable" association="assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable">
+<type xmi:idref="type_railway_RailwayDatabase"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable" association="assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable" value="1"></upperValue>
+<type xmi:idref="type_railway_timetable_Timetable"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox" name="boundingBox">
+<memberEnd xmi:idref="end_src_assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox" association="assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox">
+<type xmi:idref="type_railway_network_RailNetwork"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox" association="assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox" value="2"></upperValue>
+<type xmi:idref="type_railway_common_GeoPosition"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_RailNetwork_railway_network_Station_stations" name="stations">
+<memberEnd xmi:idref="end_src_assoc_railway_network_RailNetwork_railway_network_Station_stations"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_RailNetwork_railway_network_Station_stations"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_RailNetwork_railway_network_Station_stations" association="assoc_railway_network_RailNetwork_railway_network_Station_stations">
+<type xmi:idref="type_railway_network_RailNetwork"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_RailNetwork_railway_network_Station_stations" association="assoc_railway_network_RailNetwork_railway_network_Station_stations" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_RailNetwork_railway_network_Station_stations" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_RailNetwork_railway_network_Station_stations" value="-1"></upperValue>
+<type xmi:idref="type_railway_network_Station"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments" name="segments">
+<memberEnd xmi:idref="end_src_assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments" association="assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments">
+<type xmi:idref="type_railway_network_RailNetwork"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments" association="assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments" value="-1"></upperValue>
+<type xmi:idref="type_railway_network_TrackSegment"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_Station_railway_common_GeoPosition_position" name="position">
+<memberEnd xmi:idref="end_src_assoc_railway_network_Station_railway_common_GeoPosition_position"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_Station_railway_common_GeoPosition_position"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_Station_railway_common_GeoPosition_position" association="assoc_railway_network_Station_railway_common_GeoPosition_position">
+<type xmi:idref="type_railway_network_Station"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_Station_railway_common_GeoPosition_position" association="assoc_railway_network_Station_railway_common_GeoPosition_position" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_Station_railway_common_GeoPosition_position" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_Station_railway_common_GeoPosition_position" value="1"></upperValue>
+<type xmi:idref="type_railway_common_GeoPosition"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_Station_railway_network_Platform_platforms" name="platforms">
+<memberEnd xmi:idref="end_src_assoc_railway_network_Station_railway_network_Platform_platforms"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_Station_railway_network_Platform_platforms"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_Station_railway_network_Platform_platforms" association="assoc_railway_network_Station_railway_network_Platform_platforms">
+<type xmi:idref="type_railway_network_Station"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_Station_railway_network_Platform_platforms" association="assoc_railway_network_Station_railway_network_Platform_platforms" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_Station_railway_network_Platform_platforms" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_Station_railway_network_Platform_platforms" value="-1"></upperValue>
+<type xmi:idref="type_railway_network_Platform"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge" name="gauge">
+<memberEnd xmi:idref="end_src_assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge" association="assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge">
+<type xmi:idref="type_railway_network_TrackSegment"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge" association="assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TrackGauge"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_TrackSegment_railway_network_Electrification_electrification" name="electrification">
+<memberEnd xmi:idref="end_src_assoc_railway_network_TrackSegment_railway_network_Electrification_electrification"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_TrackSegment_railway_network_Electrification_electrification"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_TrackSegment_railway_network_Electrification_electrification" association="assoc_railway_network_TrackSegment_railway_network_Electrification_electrification">
+<type xmi:idref="type_railway_network_TrackSegment"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_TrackSegment_railway_network_Electrification_electrification" association="assoc_railway_network_TrackSegment_railway_network_Electrification_electrification">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_TrackSegment_railway_network_Electrification_electrification" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_TrackSegment_railway_network_Electrification_electrification" value="1"></upperValue>
+<type xmi:idref="type_railway_network_Electrification"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction" name="speedRestriction">
+<memberEnd xmi:idref="end_src_assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction" association="assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction">
+<type xmi:idref="type_railway_network_TrackSegment"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction" association="assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction" value="1"></upperValue>
+<type xmi:idref="type_railway_network_SpeedRestriction"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction" name="traction">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction" association="assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction">
+<type xmi:idref="type_railway_rollingstock_Locomotive"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction" association="assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_TractionType"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities" name="amenities">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities" association="assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities">
+<type xmi:idref="type_railway_rollingstock_PassengerCar"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities" association="assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Amenities"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger" name="passenger">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger" association="assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger">
+<type xmi:idref="type_railway_rollingstock_CarBody"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger" association="assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_PassengerCar"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight" name="freight">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight" association="assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight">
+<type xmi:idref="type_railway_rollingstock_CarBody"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight" association="assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_FreightCar"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body" name="body">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body" association="assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body">
+<type xmi:idref="type_railway_rollingstock_Car"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body" association="assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_CarBody"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars" name="cars">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars" association="assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars">
+<type xmi:idref="type_railway_rollingstock_TrainComposition"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars" association="assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars" value="-1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Car"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive" name="locomotive">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive" association="assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive">
+<type xmi:idref="type_railway_rollingstock_Train"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive" association="assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_Locomotive"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition" name="composition">
+<memberEnd xmi:idref="end_src_assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition" association="assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition">
+<type xmi:idref="type_railway_rollingstock_Train"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition" association="assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition" value="1"></upperValue>
+<type xmi:idref="type_railway_rollingstock_TrainComposition"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect" name="mainAspect">
+<memberEnd xmi:idref="end_src_assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect" association="assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect">
+<type xmi:idref="type_railway_signalling_SignalState"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect" association="assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_MainAspect"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect" name="distantAspect">
+<memberEnd xmi:idref="end_src_assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect" association="assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect">
+<type xmi:idref="type_railway_signalling_SignalState"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect" association="assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_DistantAspect"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect" name="shuntingAspect">
+<memberEnd xmi:idref="end_src_assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect" association="assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect">
+<type xmi:idref="type_railway_signalling_SignalState"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect" association="assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_ShuntingAspect"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_signalling_Signal_railway_signalling_SignalType_type" name="type">
+<memberEnd xmi:idref="end_src_assoc_railway_signalling_Signal_railway_signalling_SignalType_type"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalType_type"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_signalling_Signal_railway_signalling_SignalType_type" association="assoc_railway_signalling_Signal_railway_signalling_SignalType_type">
+<type xmi:idref="type_railway_signalling_Signal"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalType_type" association="assoc_railway_signalling_Signal_railway_signalling_SignalType_type">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalType_type" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalType_type" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_SignalType"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_signalling_Signal_railway_signalling_SignalState_state" name="state">
+<memberEnd xmi:idref="end_src_assoc_railway_signalling_Signal_railway_signalling_SignalState_state"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalState_state"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_signalling_Signal_railway_signalling_SignalState_state" association="assoc_railway_signalling_Signal_railway_signalling_SignalState_state">
+<type xmi:idref="type_railway_signalling_Signal"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalState_state" association="assoc_railway_signalling_Signal_railway_signalling_SignalState_state" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalState_state" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_signalling_Signal_railway_signalling_SignalState_state" value="1"></upperValue>
+<type xmi:idref="type_railway_signalling_SignalState"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_timetable_Timetable_railway_timetable_Service_services" name="services">
+<memberEnd xmi:idref="end_src_assoc_railway_timetable_Timetable_railway_timetable_Service_services"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_timetable_Timetable_railway_timetable_Service_services"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_timetable_Timetable_railway_timetable_Service_services" association="assoc_railway_timetable_Timetable_railway_timetable_Service_services">
+<type xmi:idref="type_railway_timetable_Timetable"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_timetable_Timetable_railway_timetable_Service_services" association="assoc_railway_timetable_Timetable_railway_timetable_Service_services" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_timetable_Timetable_railway_timetable_Service_services" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_timetable_Timetable_railway_timetable_Service_services" value="-1"></upperValue>
+<type xmi:idref="type_railway_timetable_Service"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category" name="category">
+<memberEnd xmi:idref="end_src_assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category" association="assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category">
+<type xmi:idref="type_railway_timetable_Service"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category" association="assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category" value="1"></upperValue>
+<type xmi:idref="type_railway_timetable_ServiceCategory"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays" name="operatingDays">
+<memberEnd xmi:idref="end_src_assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays" association="assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays">
+<type xmi:idref="type_railway_timetable_Service"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays" association="assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays" value="1"></upperValue>
+<type xmi:idref="type_railway_timetable_OperatingDays"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops" name="stops">
+<memberEnd xmi:idref="end_src_assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops" association="assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops">
+<type xmi:idref="type_railway_timetable_Service"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops" association="assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops" value="0"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops" value="-1"></upperValue>
+<type xmi:idref="type_railway_timetable_TimetableStop"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival" name="arrival">
+<memberEnd xmi:idref="end_src_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival" association="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival">
+<type xmi:idref="type_railway_timetable_TimetableStop"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival" association="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TimeOfDay"></type>
+</ownedEnd>
+</packagedElement>
+<packagedElement xmi:type="uml:Association" xmi:id="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure" name="departure">
+<memberEnd xmi:idref="end_src_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure"></memberEnd>
+<memberEnd xmi:idref="end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure"></memberEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_src_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure" association="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure">
+<type xmi:idref="type_railway_timetable_TimetableStop"></type>
+</ownedEnd>
+<ownedEnd xmi:type="uml:Property" xmi:id="end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure" association="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure" aggregation="composite">
+<lowerValue xmi:type="uml:LiteralInteger" xmi:id="lower_end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure" value="1"></lowerValue>
+<upperValue xmi:type="uml:LiteralInteger" xmi:id="upper_end_tgt_assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure" value="1"></upperValue>
+<type xmi:idref="type_railway_common_TimeOfDay"></type>
+</ownedEnd>
+</packagedElement>
+</packagedElement>
+</uml:Model>
+<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+<elements>
+<element xmi:idref="pkg_root" xmi:type="uml:Package" name="schema" scope="public">
+<model package2="eid_root" package="model_root" tpos="0" ea_localid="1" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="pkg_railway" xmi:type="uml:Package" name="railway" scope="public">
+<model package2="eid_railway" package="pkg_root" tpos="0" ea_localid="2" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="pkg_railway_network" xmi:type="uml:Package" name="railway.network" scope="public">
+<model package2="eid_railway_network" package="pkg_root" tpos="0" ea_localid="3" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="pkg_railway_common" xmi:type="uml:Package" name="railway.common" scope="public">
+<model package2="eid_railway_common" package="pkg_root" tpos="0" ea_localid="4" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="pkg_railway_rollingstock" xmi:type="uml:Package" name="railway.rollingstock" scope="public">
+<model package2="eid_railway_rollingstock" package="pkg_root" tpos="0" ea_localid="5" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="pkg_railway_signalling" xmi:type="uml:Package" name="railway.signalling" scope="public">
+<model package2="eid_railway_signalling" package="pkg_root" tpos="0" ea_localid="6" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="pkg_railway_timetable" xmi:type="uml:Package" name="railway.timetable" scope="public">
+<model package2="eid_railway_timetable" package="pkg_root" tpos="0" ea_localid="7" ea_eleType="package"></model>
+<properties isSpecification="false" sType="Package" nType="0" scope="public"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0"></extendedProperties>
+<packageproperties version="1.0" tpos="0"></packageproperties>
+<paths/>
+<times created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" lastloaddate="2026-03-25 00:00:00" lastsavedate="2026-03-25 00:00:00"></times>
+<flags iscontrolled="0" isprotected="0" batchsave="0" batchload="0" usedtd="0" logxml="0"></flags>
+</element>
+<element xmi:idref="type_railway_RailwayDatabase" xmi:type="uml:Class" name="RailwayDatabase" scope="public">
+<model package="pkg_railway" tpos="0" ea_localid="8" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_network_RailNetwork" xmi:type="uml:Class" name="RailNetwork" scope="public">
+<model package="pkg_railway_network" tpos="0" ea_localid="9" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.network"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_network_Station" xmi:type="uml:Class" name="Station" scope="public">
+<model package="pkg_railway_network" tpos="0" ea_localid="10" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.network"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_network_Platform" xmi:type="uml:Class" name="Platform" scope="public">
+<model package="pkg_railway_network" tpos="0" ea_localid="11" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.network"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_network_TrackSegment" xmi:type="uml:Class" name="TrackSegment" scope="public">
+<model package="pkg_railway_network" tpos="0" ea_localid="12" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.network"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_network_Electrification" xmi:type="uml:Enumeration" name="Electrification" scope="public">
+<model package="pkg_railway_network" tpos="0" ea_localid="13" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.network"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_network_SpeedRestriction" xmi:type="uml:Class" name="SpeedRestriction" scope="public">
+<model package="pkg_railway_network" tpos="0" ea_localid="14" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.network"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_common_TrackGauge" xmi:type="uml:Enumeration" name="TrackGauge" scope="public">
+<model package="pkg_railway_common" tpos="0" ea_localid="15" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.common"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_common_GeoPosition" xmi:type="uml:Class" name="GeoPosition" scope="public">
+<model package="pkg_railway_common" tpos="0" ea_localid="16" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.common"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_common_TimeOfDay" xmi:type="uml:Class" name="TimeOfDay" scope="public">
+<model package="pkg_railway_common" tpos="0" ea_localid="17" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.common"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_Amenities" xmi:type="uml:Enumeration" name="Amenities" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="18" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_TractionType" xmi:type="uml:Enumeration" name="TractionType" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="19" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_Locomotive" xmi:type="uml:Class" name="Locomotive" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="20" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_PassengerCar" xmi:type="uml:Class" name="PassengerCar" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="21" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_FreightCar" xmi:type="uml:Class" name="FreightCar" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="22" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_CarBody" xmi:type="uml:Class" name="CarBody" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="23" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_Car" xmi:type="uml:Class" name="Car" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="24" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_TrainComposition" xmi:type="uml:Class" name="TrainComposition" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="25" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_rollingstock_Train" xmi:type="uml:Class" name="Train" scope="public">
+<model package="pkg_railway_rollingstock" tpos="0" ea_localid="26" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.rollingstock"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_signalling_SignalType" xmi:type="uml:Enumeration" name="SignalType" scope="public">
+<model package="pkg_railway_signalling" tpos="0" ea_localid="27" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.signalling"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_signalling_MainAspect" xmi:type="uml:Enumeration" name="MainAspect" scope="public">
+<model package="pkg_railway_signalling" tpos="0" ea_localid="28" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.signalling"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_signalling_DistantAspect" xmi:type="uml:Enumeration" name="DistantAspect" scope="public">
+<model package="pkg_railway_signalling" tpos="0" ea_localid="29" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.signalling"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_signalling_ShuntingAspect" xmi:type="uml:Enumeration" name="ShuntingAspect" scope="public">
+<model package="pkg_railway_signalling" tpos="0" ea_localid="30" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.signalling"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_signalling_SignalState" xmi:type="uml:Class" name="SignalState" scope="public">
+<model package="pkg_railway_signalling" tpos="0" ea_localid="31" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.signalling"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_signalling_Signal" xmi:type="uml:Class" name="Signal" scope="public">
+<model package="pkg_railway_signalling" tpos="0" ea_localid="32" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.signalling"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_timetable_OperatingDays" xmi:type="uml:Enumeration" name="OperatingDays" scope="public">
+<model package="pkg_railway_timetable" tpos="0" ea_localid="33" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.timetable"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_timetable_ServiceCategory" xmi:type="uml:Enumeration" name="ServiceCategory" scope="public">
+<model package="pkg_railway_timetable" tpos="0" ea_localid="34" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Enumeration" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.timetable"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_timetable_Timetable" xmi:type="uml:Class" name="Timetable" scope="public">
+<model package="pkg_railway_timetable" tpos="0" ea_localid="35" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.timetable"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_timetable_Service" xmi:type="uml:Class" name="Service" scope="public">
+<model package="pkg_railway_timetable" tpos="0" ea_localid="36" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.timetable"></extendedProperties>
+</element>
+<element xmi:idref="type_railway_timetable_TimetableStop" xmi:type="uml:Class" name="TimetableStop" scope="public">
+<model package="pkg_railway_timetable" tpos="0" ea_localid="37" ea_eleType="element"></model>
+<properties isSpecification="false" sType="Class" nType="0" scope="public" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"></properties>
+<project author="zserio" version="1.0" phase="1.0" created="2026-03-25 00:00:00" modified="2026-03-25 00:00:00" complexity="1" status="Proposed"></project>
+<code gentype="Java"></code>
+<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"></style>
+<tags/>
+<xrefs/>
+<extendedProperties tagged="0" package_name="railway.timetable"></extendedProperties>
+</element>
+</elements>
+<connectors>
+<connector xmi:idref="assoc_railway_RailwayDatabase_railway_network_RailNetwork_network">
+<source xmi:idref="type_railway_RailwayDatabase">
+<model ea_localid="1" type="Class" name="RailwayDatabase"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_network_RailNetwork">
+<model ea_localid="1" type="Class" name="RailNetwork"></model>
+<role name="network" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="1"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_RailwayDatabase_railway_rollingstock_Train_fleet">
+<source xmi:idref="type_railway_RailwayDatabase">
+<model ea_localid="2" type="Class" name="RailwayDatabase"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_Train">
+<model ea_localid="2" type="Class" name="Train"></model>
+<role name="fleet" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="2"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_RailwayDatabase_railway_signalling_Signal_signals">
+<source xmi:idref="type_railway_RailwayDatabase">
+<model ea_localid="3" type="Class" name="RailwayDatabase"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_signalling_Signal">
+<model ea_localid="3" type="Class" name="Signal"></model>
+<role name="signals" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="3"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_RailwayDatabase_railway_timetable_Timetable_timetable">
+<source xmi:idref="type_railway_RailwayDatabase">
+<model ea_localid="4" type="Class" name="RailwayDatabase"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_timetable_Timetable">
+<model ea_localid="4" type="Class" name="Timetable"></model>
+<role name="timetable" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="4"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_RailNetwork_railway_common_GeoPosition_boundingBox">
+<source xmi:idref="type_railway_network_RailNetwork">
+<model ea_localid="5" type="Class" name="RailNetwork"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_common_GeoPosition">
+<model ea_localid="5" type="Class" name="GeoPosition"></model>
+<role name="boundingBox" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="5"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_RailNetwork_railway_network_Station_stations">
+<source xmi:idref="type_railway_network_RailNetwork">
+<model ea_localid="6" type="Class" name="RailNetwork"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_network_Station">
+<model ea_localid="6" type="Class" name="Station"></model>
+<role name="stations" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="6"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_RailNetwork_railway_network_TrackSegment_segments">
+<source xmi:idref="type_railway_network_RailNetwork">
+<model ea_localid="7" type="Class" name="RailNetwork"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_network_TrackSegment">
+<model ea_localid="7" type="Class" name="TrackSegment"></model>
+<role name="segments" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="7"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_Station_railway_common_GeoPosition_position">
+<source xmi:idref="type_railway_network_Station">
+<model ea_localid="8" type="Class" name="Station"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_common_GeoPosition">
+<model ea_localid="8" type="Class" name="GeoPosition"></model>
+<role name="position" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="8"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_Station_railway_network_Platform_platforms">
+<source xmi:idref="type_railway_network_Station">
+<model ea_localid="9" type="Class" name="Station"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_network_Platform">
+<model ea_localid="9" type="Class" name="Platform"></model>
+<role name="platforms" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="9"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_TrackSegment_railway_common_TrackGauge_gauge">
+<source xmi:idref="type_railway_network_TrackSegment">
+<model ea_localid="10" type="Class" name="TrackSegment"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_common_TrackGauge">
+<model ea_localid="10" type="Class" name="TrackGauge"></model>
+<role name="gauge" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="10"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_TrackSegment_railway_network_Electrification_electrification">
+<source xmi:idref="type_railway_network_TrackSegment">
+<model ea_localid="11" type="Class" name="TrackSegment"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_network_Electrification">
+<model ea_localid="11" type="Class" name="Electrification"></model>
+<role name="electrification" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="11"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_network_TrackSegment_railway_network_SpeedRestriction_speedRestriction">
+<source xmi:idref="type_railway_network_TrackSegment">
+<model ea_localid="12" type="Class" name="TrackSegment"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_network_SpeedRestriction">
+<model ea_localid="12" type="Class" name="SpeedRestriction"></model>
+<role name="speedRestriction" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="12"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_Locomotive_railway_rollingstock_TractionType_traction">
+<source xmi:idref="type_railway_rollingstock_Locomotive">
+<model ea_localid="13" type="Class" name="Locomotive"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_TractionType">
+<model ea_localid="13" type="Class" name="TractionType"></model>
+<role name="traction" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="13"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_PassengerCar_railway_rollingstock_Amenities_amenities">
+<source xmi:idref="type_railway_rollingstock_PassengerCar">
+<model ea_localid="14" type="Class" name="PassengerCar"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_Amenities">
+<model ea_localid="14" type="Class" name="Amenities"></model>
+<role name="amenities" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="14"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_CarBody_railway_rollingstock_PassengerCar_passenger">
+<source xmi:idref="type_railway_rollingstock_CarBody">
+<model ea_localid="15" type="Class" name="CarBody"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_PassengerCar">
+<model ea_localid="15" type="Class" name="PassengerCar"></model>
+<role name="passenger" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="15"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_CarBody_railway_rollingstock_FreightCar_freight">
+<source xmi:idref="type_railway_rollingstock_CarBody">
+<model ea_localid="16" type="Class" name="CarBody"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_FreightCar">
+<model ea_localid="16" type="Class" name="FreightCar"></model>
+<role name="freight" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="16"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_Car_railway_rollingstock_CarBody_body">
+<source xmi:idref="type_railway_rollingstock_Car">
+<model ea_localid="17" type="Class" name="Car"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_CarBody">
+<model ea_localid="17" type="Class" name="CarBody"></model>
+<role name="body" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="17"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_TrainComposition_railway_rollingstock_Car_cars">
+<source xmi:idref="type_railway_rollingstock_TrainComposition">
+<model ea_localid="18" type="Class" name="TrainComposition"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_Car">
+<model ea_localid="18" type="Class" name="Car"></model>
+<role name="cars" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="18"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_Train_railway_rollingstock_Locomotive_locomotive">
+<source xmi:idref="type_railway_rollingstock_Train">
+<model ea_localid="19" type="Class" name="Train"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_Locomotive">
+<model ea_localid="19" type="Class" name="Locomotive"></model>
+<role name="locomotive" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="19"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_rollingstock_Train_railway_rollingstock_TrainComposition_composition">
+<source xmi:idref="type_railway_rollingstock_Train">
+<model ea_localid="20" type="Class" name="Train"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_rollingstock_TrainComposition">
+<model ea_localid="20" type="Class" name="TrainComposition"></model>
+<role name="composition" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="20"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_signalling_SignalState_railway_signalling_MainAspect_mainAspect">
+<source xmi:idref="type_railway_signalling_SignalState">
+<model ea_localid="21" type="Class" name="SignalState"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_signalling_MainAspect">
+<model ea_localid="21" type="Class" name="MainAspect"></model>
+<role name="mainAspect" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="21"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_signalling_SignalState_railway_signalling_DistantAspect_distantAspect">
+<source xmi:idref="type_railway_signalling_SignalState">
+<model ea_localid="22" type="Class" name="SignalState"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_signalling_DistantAspect">
+<model ea_localid="22" type="Class" name="DistantAspect"></model>
+<role name="distantAspect" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="22"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_signalling_SignalState_railway_signalling_ShuntingAspect_shuntingAspect">
+<source xmi:idref="type_railway_signalling_SignalState">
+<model ea_localid="23" type="Class" name="SignalState"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_signalling_ShuntingAspect">
+<model ea_localid="23" type="Class" name="ShuntingAspect"></model>
+<role name="shuntingAspect" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="23"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_signalling_Signal_railway_signalling_SignalType_type">
+<source xmi:idref="type_railway_signalling_Signal">
+<model ea_localid="24" type="Class" name="Signal"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_signalling_SignalType">
+<model ea_localid="24" type="Class" name="SignalType"></model>
+<role name="type" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="24"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_signalling_Signal_railway_signalling_SignalState_state">
+<source xmi:idref="type_railway_signalling_Signal">
+<model ea_localid="25" type="Class" name="Signal"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_signalling_SignalState">
+<model ea_localid="25" type="Class" name="SignalState"></model>
+<role name="state" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="25"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_timetable_Timetable_railway_timetable_Service_services">
+<source xmi:idref="type_railway_timetable_Timetable">
+<model ea_localid="26" type="Class" name="Timetable"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_timetable_Service">
+<model ea_localid="26" type="Class" name="Service"></model>
+<role name="services" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="26"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_timetable_Service_railway_timetable_ServiceCategory_category">
+<source xmi:idref="type_railway_timetable_Service">
+<model ea_localid="27" type="Class" name="Service"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_timetable_ServiceCategory">
+<model ea_localid="27" type="Class" name="ServiceCategory"></model>
+<role name="category" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="27"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_timetable_Service_railway_timetable_OperatingDays_operatingDays">
+<source xmi:idref="type_railway_timetable_Service">
+<model ea_localid="28" type="Class" name="Service"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_timetable_OperatingDays">
+<model ea_localid="28" type="Class" name="OperatingDays"></model>
+<role name="operatingDays" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="28"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_timetable_Service_railway_timetable_TimetableStop_stops">
+<source xmi:idref="type_railway_timetable_Service">
+<model ea_localid="29" type="Class" name="Service"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_timetable_TimetableStop">
+<model ea_localid="29" type="Class" name="TimetableStop"></model>
+<role name="stops" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="29"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_arrival">
+<source xmi:idref="type_railway_timetable_TimetableStop">
+<model ea_localid="30" type="Class" name="TimetableStop"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_common_TimeOfDay">
+<model ea_localid="30" type="Class" name="TimeOfDay"></model>
+<role name="arrival" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="30"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+<connector xmi:idref="assoc_railway_timetable_TimetableStop_railway_common_TimeOfDay_departure">
+<source xmi:idref="type_railway_timetable_TimetableStop">
+<model ea_localid="31" type="Class" name="TimetableStop"></model>
+<role visibility="Public" targetScope="instance"></role>
+<type aggregation="composite" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="false"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</source>
+<target xmi:idref="type_railway_common_TimeOfDay">
+<model ea_localid="31" type="Class" name="TimeOfDay"></model>
+<role name="departure" visibility="Public" targetScope="instance"></role>
+<type aggregation="none" containment="Unspecified"></type>
+<constraints/>
+<modifiers isOrdered="false" changeable="none" isNavigable="true"></modifiers>
+<style value="Union=0;Derived=0;AllowDuplicates=0;"></style>
+<documentation/>
+<xrefs/>
+<tags/>
+</target>
+<model ea_localid="31"></model>
+<properties ea_type="Association" direction="Source -&gt; Destination"></properties>
+<documentation/>
+<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"></appearance>
+<labels/>
+<extendedProperties virtualInheritance="0"></extendedProperties>
+<style/>
+<xrefs/>
+<tags/>
+</connector>
+</connectors>
+<primitivetypes></primitivetypes>
+<profiles></profiles>
+</xmi:Extension>
+</xmi:XMI>

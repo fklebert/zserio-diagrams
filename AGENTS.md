@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to agentic coding tools working with code in this repository.
 
 ## Build Commands
 
@@ -14,16 +14,21 @@ ant clean                  # Clean build artifacts
 ## Testing the Extension
 
 ```bash
-# Generate diagrams from the bundled example schema
-java -jar distr/zserio.jar -src zs railway.zs -diagram -diagram-format all -diagram-output ./output
+# Golden-file regression tests (requires distr/zserio.jar from the build above)
+python3 tests/run_tests.py
 
-# Test XMI with EA diagram definitions (wildcard matching)
-java -jar distr/zserio.jar -src zs railway.zs -diagram -diagram-format xmi \
-    -diagram-output ./output -diagram-xmi-diagrams "Train,*State"
+# After INTENTIONAL output changes: regenerate golden files, then review the diff
+python3 tests/run_tests.py --update
+git diff tests/expected
+
+# Ad-hoc generation from the bundled example schema
+java -jar distr/zserio.jar -src zs railway.zs -diagram -diagram-format all -diagram-output ./output
 
 # Structurally validate generated XMI against EA expectations
 python3 validate_xmi.py output/*.xmi
 ```
+
+Run the golden-file tests after every change to the extension source. Never blanket-regenerate golden files to make a failing test pass — a diff you can't explain is a bug.
 
 The example schema in `zs/` exercises every construct the diagrams visualize (structs, choice-on-selector, union, enums, bitmasks, subtypes, const, parameterized types, optional/fixed/dynamic arrays, bit fields) — treat it as the regression fixture. The full CLI option reference is in README.md.
 

@@ -1,5 +1,7 @@
 # zserio-diagrams
 
+[![CI](https://github.com/fklebert/zserio-diagrams/actions/workflows/ci.yml/badge.svg)](https://github.com/fklebert/zserio-diagrams/actions/workflows/ci.yml)
+
 A [zserio](https://github.com/ndsev/zserio) extension that generates **PlantUML** and **Mermaid** class diagrams and **XMI** files (importable into Sparx Enterprise Architect) directly from zserio schemas.
 
 Point it at any `.zs` file and it turns the type definitions — structs, choices, unions, enums, bitmasks, subtypes, constants — into UML class diagrams with composition, association and inheritance relationships, including field cardinalities.
@@ -194,6 +196,22 @@ A structural validator is included that checks generated XMI against what EA exp
 
 ```bash
 python3 validate_xmi.py output/*.xmi
+```
+
+## Testing
+
+The repository uses golden-file regression tests: every scenario runs the bundled jar against the railway example schema and compares the output byte-for-byte with the expected files in `tests/expected/`. Generated XMI is additionally checked with `validate_xmi.py`.
+
+```bash
+ant zserio_bundle.install       # build first
+python3 tests/run_tests.py      # run all tests
+```
+
+If you change the output format intentionally, regenerate the expected files and review the diff:
+
+```bash
+python3 tests/run_tests.py --update
+git diff tests/expected
 ```
 
 ## The Example Schema
