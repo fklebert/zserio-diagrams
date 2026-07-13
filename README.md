@@ -231,4 +231,4 @@ The extension plugs into zserio's standard extension mechanism (registered via `
 
 BSD 3-Clause — see [LICENSE](LICENSE).
 
-Copyright (c) 2026, Klebert Engineering GmbH
+Copyright (c) 2026, Klebert Engineering
