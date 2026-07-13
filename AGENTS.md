@@ -30,6 +30,8 @@ python3 validate_xmi.py output/*.xmi
 
 Run the golden-file tests after every change to the extension source. Never blanket-regenerate golden files to make a failing test pass — a diff you can't explain is a bug.
 
+`docs/railway-schema.svg` (shown in the README) is rendered from the example schema's PlantUML output (`java -jar plantuml.jar -tsvg schema.puml`, Graphviz layout) — re-render it when the example schema changes.
+
 The example schema in `zs/` exercises every construct the diagrams visualize (structs, choice-on-selector, union, enums, bitmasks, subtypes, const, parameterized types, optional/fixed/dynamic arrays, bit fields) — treat it as the regression fixture. The full CLI option reference is in README.md.
 
 ## Architecture

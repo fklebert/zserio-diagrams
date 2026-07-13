@@ -6,6 +6,10 @@ A [zserio](https://github.com/ndsev/zserio) extension that generates **PlantUML*
 
 Point it at any `.zs` file and it turns the type definitions — structs, choices, unions, enums, bitmasks, subtypes, constants — into UML class diagrams with composition, association and inheritance relationships, including field cardinalities.
 
+Generated from the bundled railway example schema:
+
+![Class diagram generated from the railway example schema](docs/railway-schema.svg)
+
 ## Prerequisites
 
 - **Java 21+** (JDK)
