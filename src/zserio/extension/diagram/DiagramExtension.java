@@ -54,7 +54,8 @@ public class DiagramExtension implements Extension
                                        .longOpt(OPTION_DIAGRAM_FORMAT)
                                        .hasArg()
                                        .argName("format")
-                                       .desc("diagram format: plantuml, mermaid, xmi, both, or all (default: both)")
+                                       .desc("diagram format(s): comma-separated list of plantuml, mermaid, xmi, "
+                                               + "or all (default: plantuml,mermaid)")
                                        .build();
         options.addOption(formatOption);
 
@@ -139,7 +140,8 @@ public class DiagramExtension implements Extension
     public void process(Root rootNode, ExtensionParameters parameters) throws ZserioExtensionException
     {
         // Parse options
-        String format = getStringParameter(parameters, OPTION_DIAGRAM_FORMAT, "both");
+        String format = getStringParameter(parameters, OPTION_DIAGRAM_FORMAT, "plantuml,mermaid");
+        Set<String> formats = parseFormats(format);
         String outputDir = getStringParameter(parameters, OPTION_DIAGRAM_OUTPUT, ".");
         Set<String> packageFilters = getPackageFilters(parameters);
         boolean splitPackages = parameters.argumentExists(OPTION_DIAGRAM_SPLIT_PACKAGES);
@@ -166,15 +168,15 @@ public class DiagramExtension implements Extension
 
         // Generate diagrams
         List<DiagramGenerator> generators = new ArrayList<>();
-        if (format.equals("plantuml") || format.equals("both") || format.equals("all"))
+        if (formats.contains(FORMAT_PLANTUML))
         {
             generators.add(new PlantUmlGenerator());
         }
-        if (format.equals("mermaid") || format.equals("both") || format.equals("all"))
+        if (formats.contains(FORMAT_MERMAID))
         {
             generators.add(new MermaidGenerator());
         }
-        if (format.equals("xmi") || format.equals("all"))
+        if (formats.contains(FORMAT_XMI))
         {
             generators.add(new XmiGenerator());
         }
@@ -249,6 +251,41 @@ public class DiagramExtension implements Extension
         return new DiagramConfig(layout, direction, orthoLines);
     }
 
+    private Set<String> parseFormats(String format) throws ZserioExtensionException
+    {
+        Set<String> formats = new HashSet<>();
+        for (String token : format.split(","))
+        {
+            String name = token.trim().toLowerCase();
+            if (name.isEmpty())
+            {
+                continue;
+            }
+            if (name.equals(FORMAT_ALL))
+            {
+                formats.addAll(KNOWN_FORMATS);
+            }
+            else if (KNOWN_FORMATS.contains(name))
+            {
+                formats.add(name);
+            }
+            else
+            {
+                throw new ZserioExtensionException("Unknown diagram format '" + name +
+                        "'! Expected a comma-separated list of: plantuml, mermaid, xmi (or all).");
+            }
+        }
+
+        if (formats.isEmpty())
+        {
+            throw new ZserioExtensionException(
+                    "No diagram format given! Expected a comma-separated list of: plantuml, mermaid, xmi " +
+                    "(or all).");
+        }
+
+        return formats;
+    }
+
     private Set<String> getPackageFilters(ExtensionParameters parameters)
     {
         Set<String> filters = new HashSet<>();
@@ -268,6 +305,12 @@ public class DiagramExtension implements Extension
         }
         return filters;
     }
+
+    private static final String FORMAT_PLANTUML = "plantuml";
+    private static final String FORMAT_MERMAID = "mermaid";
+    private static final String FORMAT_XMI = "xmi";
+    private static final String FORMAT_ALL = "all";
+    private static final Set<String> KNOWN_FORMATS = Set.of(FORMAT_PLANTUML, FORMAT_MERMAID, FORMAT_XMI);
 
     private static final String EXTENSION_VERSION_STRING = "1.0.0";
     private static final String ZSERIO_VERSION_STRING = "2.18.0";

@@ -39,7 +39,7 @@ This writes `schema.puml` (PlantUML) and `schema.mmd` (Mermaid) to `./output`.
 | Option | Description |
 |--------|-------------|
 | `-diagram` | Enable diagram generation (required) |
-| `-diagram-format <format>` | Output format: `plantuml`, `mermaid`, `xmi`, `both`, or `all` (default: `both`) |
+| `-diagram-format <formats>` | Comma-separated list of output formats: `plantuml`, `mermaid`, `xmi` — or `all` (default: `plantuml,mermaid`) |
 | `-diagram-output <dir>` | Output directory for generated diagram files |
 | `-diagram-package <pkg>` | Filter by package name (comma-separated for multiple) |
 | `-diagram-split-packages` | Generate a separate diagram file for each package |
@@ -79,6 +79,10 @@ java -jar distr/zserio.jar -src zs railway.zs \
 java -jar distr/zserio.jar -src zs railway.zs \
     -diagram -diagram-format xmi -diagram-output ./output \
     -diagram-xmi-diagrams "Train,RailNetwork,*State"
+
+# Pick multiple formats explicitly
+java -jar distr/zserio.jar -src zs railway.zs \
+    -diagram -diagram-format plantuml,xmi -diagram-output ./output
 
 # All formats (PlantUML + Mermaid + XMI)
 java -jar distr/zserio.jar -src zs railway.zs \
